@@ -29,6 +29,26 @@ class _StudentDetailsScreenState extends State<StudentDetailsScreen> {
   final _key = GlobalKey<FormState>();
 
   List<StudentModel> students = [];
+
+  // late TextEditingController _fnameController;
+  // late TextEditingController _lnameController;
+  // late TextEditingController _cityController;
+
+  // @override
+  // void initState() {
+  //   // TODO: implement initState
+
+  //   _fnameController = TextEditingController();
+  //   _lnameController = TextEditingController();
+  //   _cityController = TextEditingController();
+
+  //   cities = [
+  //     const DropdownMenuItem(value : 'Kathmandu',child: Text ('Kathmandu')),
+  //     const DropdownMenuItem(value : 'Pokhara',child: Text ('Pokhara')),
+  //     const DropdownMenuItem(value : 'Biratnagar',child: Text ('Biratnagar'))
+  //   ];
+  // }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -112,7 +132,8 @@ class _StudentDetailsScreenState extends State<StudentDetailsScreen> {
               students.isEmpty
                   ? const Text('No data')
                   : Expanded(
-                      child: ListView.builder(
+                      child: ListView.separated(
+                        separatorBuilder: (context, index) => const Divider(),
                         itemCount: students.length,
                         itemBuilder: (context, index) {
                           return ListTile(

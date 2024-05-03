@@ -136,17 +136,31 @@ class _StudentDetailsScreenState extends State<StudentDetailsScreen> {
                         separatorBuilder: (context, index) => const Divider(),
                         itemCount: students.length,
                         itemBuilder: (context, index) {
-                          return ListTile(
-                            leading: const Icon(Icons.person),
-                            title: Text(students[index].firstName!),
-                            subtitle: Text(students[index].city!),
-                            trailing: IconButton(
-                              icon: const Icon(Icons.delete),
-                              onPressed: () {
-                                setState(() {
-                                  students.removeAt(index);
-                                });
-                              },
+                          // return ListTile(
+                          //   leading: const Icon(Icons.person),
+                          //   title: Text(students[index].firstName!),
+                          //   subtitle: Text(students[index].city!),
+                          //   trailing: IconButton(
+                          //     icon: const Icon(Icons.delete),
+                          //     onPressed: () {
+                          //       setState(() {
+                          //         students.removeAt(index);
+                          //       });
+                          //     },
+                          //   ),
+                          // );
+                          return SizedBox(
+                            height: 300,
+                            width: double.infinity,
+                            child: Card(
+                              color: Colors.amber,
+                              child: Center(
+                                  child: Text(
+                                students[index].firstName!,
+                                style: const TextStyle(
+                                  fontSize: 30,
+                                ),
+                              )),
                             ),
                           );
                         },
